@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F11AA8F615D9ADC6004CBC4B /* DATNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11AA8F515D9ADC6004CBC4B /* DATNavigationController.m */; };
+		F11EDDDF16C5BD1300AE717B /* barGrapher.m in Sources */ = {isa = PBXBuildFile; fileRef = F11EDDDE16C5BD1300AE717B /* barGrapher.m */; };
+		F12A66E015B3C3C6004133EA /* DATLevelTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A66DF15B3C3C6004133EA /* DATLevelTracker.m */; };
+		F12A66ED15B3CB8F004133EA /* glassClink.wav in Resources */ = {isa = PBXBuildFile; fileRef = F12A66E815B3CB8F004133EA /* glassClink.wav */; };
+		F12A66EE15B3CB8F004133EA /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = F12A66E915B3CB8F004133EA /* beep.wav */; };
+		F12A66F515B3CCBA004133EA /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A66F415B3CCBA004133EA /* AudioController.m */; };
+		F12A66F715B3CCEB004133EA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12A66F615B3CCEB004133EA /* AudioToolbox.framework */; };
+		F14FA6C715DF01B200AD6100 /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = F14FA6C615DF01B200AD6100 /* Check.png */; };
+		F15A504515AD31F6003D909D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A504415AD31F6003D909D /* UIKit.framework */; };
+		F15A504715AD31F6003D909D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A504615AD31F6003D909D /* Foundation.framework */; };
+		F15A504915AD31F6003D909D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A504815AD31F6003D909D /* CoreGraphics.framework */; };
+		F15A504F15AD31F6003D909D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F15A504D15AD31F6003D909D /* InfoPlist.strings */; };
+		F15A505115AD31F6003D909D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A505015AD31F6003D909D /* main.m */; };
+		F15A505515AD31F6003D909D /* DATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A505415AD31F6003D909D /* DATAppDelegate.m */; };
+		F15A505815AD31F6003D909D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15A505615AD31F6003D909D /* MainStoryboard.storyboard */; };
+		F15A505B15AD31F6003D909D /* DATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A505A15AD31F6003D909D /* DATViewController.m */; };
+		F15A506315AD324C003D909D /* DATDataLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A506215AD324C003D909D /* DATDataLogger.m */; };
+		F15A506915ADED47003D909D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A506815ADED47003D909D /* QuartzCore.framework */; };
+		F19E70B115B24EF4009C6D60 /* DATQue.m in Sources */ = {isa = PBXBuildFile; fileRef = F19E70B015B24EF4009C6D60 /* DATQue.m */; };
+		F1A2E2BD15F677710012F67F /* DATTrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A2E2BC15F677710012F67F /* DATTrainingViewController.m */; };
+		F1A2E2C015F679A10012F67F /* DATLeveTrackerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A2E2BF15F679A10012F67F /* DATLeveTrackerTwo.m */; };
+		F1D6833615DEEEE1001BF483 /* NoGoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D6833415DEEEE1001BF483 /* NoGoImage.png */; };
+		F1D6833715DEEEE1001BF483 /* GoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D6833515DEEEE1001BF483 /* GoImage.png */; };
+		F1DBC30B15D95E1600084EE3 /* DATMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DBC30A15D95E1600084EE3 /* DATMainMenuViewController.m */; };
+		F1DBC31615D9689800084EE3 /* DATCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DBC31515D9689800084EE3 /* DATCalibrationViewController.m */; };
+		F1E5258F1676925700904354 /* gaugeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E5258E1676925700904354 /* gaugeImage.png */; };
+		F1E63D8C15DAD30C0016309F /* labLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E63D8B15DAD30C0016309F /* labLogo.png */; };
+		F1E63D8F15DAD3CD0016309F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E63D8E15DAD3CC0016309F /* MessageUI.framework */; };
+		F1E63D9715DB0CA80016309F /* DATSimpleViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E63D9615DB0CA80016309F /* DATSimpleViewControllerViewController.m */; };
+		F1E63D9D15DC1F410016309F /* iOS Simulator Screen shot Aug 15, 2012 11.16.38 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E63D9C15DC1F410016309F /* iOS Simulator Screen shot Aug 15, 2012 11.16.38 AM.png */; };
+		F1F468E816ADE720005555C9 /* gaugeImageflip.png in Resources */ = {isa = PBXBuildFile; fileRef = F1F468E716ADE720005555C9 /* gaugeImageflip.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F11AA8F415D9ADC6004CBC4B /* DATNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATNavigationController.h; sourceTree = "<group>"; };
+		F11AA8F515D9ADC6004CBC4B /* DATNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATNavigationController.m; sourceTree = "<group>"; };
+		F11EDDDD16C5BD1300AE717B /* barGrapher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = barGrapher.h; sourceTree = "<group>"; };
+		F11EDDDE16C5BD1300AE717B /* barGrapher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = barGrapher.m; sourceTree = "<group>"; };
+		F12A66DE15B3C3C6004133EA /* DATLevelTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATLevelTracker.h; sourceTree = "<group>"; };
+		F12A66DF15B3C3C6004133EA /* DATLevelTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATLevelTracker.m; sourceTree = "<group>"; };
+		F12A66E815B3CB8F004133EA /* glassClink.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = glassClink.wav; sourceTree = "<group>"; };
+		F12A66E915B3CB8F004133EA /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		F12A66F315B3CCBA004133EA /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		F12A66F415B3CCBA004133EA /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		F12A66F615B3CCEB004133EA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F14FA6C615DF01B200AD6100 /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
+		F15A504015AD31F6003D909D /* DAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15A504415AD31F6003D909D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F15A504615AD31F6003D909D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F15A504815AD31F6003D909D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F15A504C15AD31F6003D909D /* DAT-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DAT-Info.plist"; sourceTree = "<group>"; };
+		F15A504E15AD31F6003D909D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F15A505015AD31F6003D909D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F15A505215AD31F6003D909D /* DAT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DAT-Prefix.pch"; sourceTree = "<group>"; };
+		F15A505315AD31F6003D909D /* DATAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DATAppDelegate.h; sourceTree = "<group>"; };
+		F15A505415AD31F6003D909D /* DATAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DATAppDelegate.m; sourceTree = "<group>"; };
+		F15A505715AD31F6003D909D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F15A505915AD31F6003D909D /* DATViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DATViewController.h; sourceTree = "<group>"; };
+		F15A505A15AD31F6003D909D /* DATViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DATViewController.m; sourceTree = "<group>"; };
+		F15A506115AD324C003D909D /* DATDataLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATDataLogger.h; sourceTree = "<group>"; };
+		F15A506215AD324C003D909D /* DATDataLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATDataLogger.m; sourceTree = "<group>"; };
+		F15A506815ADED47003D909D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F19E70AF15B24EF4009C6D60 /* DATQue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATQue.h; sourceTree = "<group>"; };
+		F19E70B015B24EF4009C6D60 /* DATQue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATQue.m; sourceTree = "<group>"; };
+		F1A2E2BB15F677710012F67F /* DATTrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATTrainingViewController.h; sourceTree = "<group>"; };
+		F1A2E2BC15F677710012F67F /* DATTrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATTrainingViewController.m; sourceTree = "<group>"; };
+		F1A2E2BE15F679A00012F67F /* DATLeveTrackerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATLeveTrackerTwo.h; sourceTree = "<group>"; };
+		F1A2E2BF15F679A10012F67F /* DATLeveTrackerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATLeveTrackerTwo.m; sourceTree = "<group>"; };
+		F1D6833415DEEEE1001BF483 /* NoGoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoGoImage.png; sourceTree = "<group>"; };
+		F1D6833515DEEEE1001BF483 /* GoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoImage.png; sourceTree = "<group>"; };
+		F1DBC30915D95E1600084EE3 /* DATMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATMainMenuViewController.h; sourceTree = "<group>"; };
+		F1DBC30A15D95E1600084EE3 /* DATMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATMainMenuViewController.m; sourceTree = "<group>"; };
+		F1DBC31415D9689800084EE3 /* DATCalibrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATCalibrationViewController.h; sourceTree = "<group>"; };
+		F1DBC31515D9689800084EE3 /* DATCalibrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATCalibrationViewController.m; sourceTree = "<group>"; };
+		F1DBC31715D9697700084EE3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F1E5258E1676925700904354 /* gaugeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaugeImage.png; sourceTree = "<group>"; };
+		F1E63D8B15DAD30C0016309F /* labLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = labLogo.png; sourceTree = "<group>"; };
+		F1E63D8E15DAD3CC0016309F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F1E63D9515DB0CA80016309F /* DATSimpleViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATSimpleViewControllerViewController.h; sourceTree = "<group>"; };
+		F1E63D9615DB0CA80016309F /* DATSimpleViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATSimpleViewControllerViewController.m; sourceTree = "<group>"; };
+		F1E63D9C15DC1F410016309F /* iOS Simulator Screen shot Aug 15, 2012 11.16.38 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot Aug 15, 2012 11.16.38 AM.png"; sourceTree = "<group>"; };
+		F1F468E716ADE720005555C9 /* gaugeImageflip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaugeImageflip.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F15A503D15AD31F6003D909D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1E63D8F15DAD3CD0016309F /* MessageUI.framework in Frameworks */,
+				F12A66F715B3CCEB004133EA /* AudioToolbox.framework in Frameworks */,
+				F15A506915ADED47003D909D /* QuartzCore.framework in Frameworks */,
+				F15A504515AD31F6003D909D /* UIKit.framework in Frameworks */,
+				F15A504715AD31F6003D909D /* Foundation.framework in Frameworks */,
+				F15A504915AD31F6003D909D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F12A66F015B3CB98004133EA /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				F12A66E815B3CB8F004133EA /* glassClink.wav */,
+				F12A66E915B3CB8F004133EA /* beep.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		F15A503515AD31F6003D909D = {
+			isa = PBXGroup;
+			children = (
+				F1E63D9C15DC1F410016309F /* iOS Simulator Screen shot Aug 15, 2012 11.16.38 AM.png */,
+				F15A504A15AD31F6003D909D /* DAT */,
+				F15A504315AD31F6003D909D /* Frameworks */,
+				F15A504115AD31F6003D909D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F15A504115AD31F6003D909D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F15A504015AD31F6003D909D /* DAT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F15A504315AD31F6003D909D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1E63D8E15DAD3CC0016309F /* MessageUI.framework */,
+				F12A66F615B3CCEB004133EA /* AudioToolbox.framework */,
+				F15A506815ADED47003D909D /* QuartzCore.framework */,
+				F15A504415AD31F6003D909D /* UIKit.framework */,
+				F15A504615AD31F6003D909D /* Foundation.framework */,
+				F15A504815AD31F6003D909D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F15A504A15AD31F6003D909D /* DAT */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBC31715D9697700084EE3 /* Constants.h */,
+				F15A505315AD31F6003D909D /* DATAppDelegate.h */,
+				F15A505415AD31F6003D909D /* DATAppDelegate.m */,
+				F15A505615AD31F6003D909D /* MainStoryboard.storyboard */,
+				F11AA8F415D9ADC6004CBC4B /* DATNavigationController.h */,
+				F11AA8F515D9ADC6004CBC4B /* DATNavigationController.m */,
+				F1DBC31315D962C400084EE3 /* Views */,
+				F1DBC31215D9629700084EE3 /* Utilities */,
+				F15A504B15AD31F6003D909D /* Supporting Files */,
+			);
+			path = DAT;
+			sourceTree = "<group>";
+		};
+		F15A504B15AD31F6003D909D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1E63D8D15DAD3140016309F /* Images */,
+				F12A66F015B3CB98004133EA /* Audio */,
+				F15A504C15AD31F6003D909D /* DAT-Info.plist */,
+				F15A504D15AD31F6003D909D /* InfoPlist.strings */,
+				F15A505015AD31F6003D909D /* main.m */,
+				F15A505215AD31F6003D909D /* DAT-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1DBC31215D9629700084EE3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F11EDDDD16C5BD1300AE717B /* barGrapher.h */,
+				F11EDDDE16C5BD1300AE717B /* barGrapher.m */,
+				F15A506115AD324C003D909D /* DATDataLogger.h */,
+				F15A506215AD324C003D909D /* DATDataLogger.m */,
+				F19E70AF15B24EF4009C6D60 /* DATQue.h */,
+				F19E70B015B24EF4009C6D60 /* DATQue.m */,
+				F12A66DE15B3C3C6004133EA /* DATLevelTracker.h */,
+				F12A66DF15B3C3C6004133EA /* DATLevelTracker.m */,
+				F1A2E2BE15F679A00012F67F /* DATLeveTrackerTwo.h */,
+				F1A2E2BF15F679A10012F67F /* DATLeveTrackerTwo.m */,
+				F12A66F315B3CCBA004133EA /* AudioController.h */,
+				F12A66F415B3CCBA004133EA /* AudioController.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F1DBC31315D962C400084EE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1E63D9515DB0CA80016309F /* DATSimpleViewControllerViewController.h */,
+				F1E63D9615DB0CA80016309F /* DATSimpleViewControllerViewController.m */,
+				F1DBC31415D9689800084EE3 /* DATCalibrationViewController.h */,
+				F1DBC31515D9689800084EE3 /* DATCalibrationViewController.m */,
+				F1DBC30915D95E1600084EE3 /* DATMainMenuViewController.h */,
+				F1DBC30A15D95E1600084EE3 /* DATMainMenuViewController.m */,
+				F15A505915AD31F6003D909D /* DATViewController.h */,
+				F15A505A15AD31F6003D909D /* DATViewController.m */,
+				F1A2E2BB15F677710012F67F /* DATTrainingViewController.h */,
+				F1A2E2BC15F677710012F67F /* DATTrainingViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F1E63D8D15DAD3140016309F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F1E5258E1676925700904354 /* gaugeImage.png */,
+				F1F468E716ADE720005555C9 /* gaugeImageflip.png */,
+				F14FA6C615DF01B200AD6100 /* Check.png */,
+				F1E63D8B15DAD30C0016309F /* labLogo.png */,
+				F1D6833415DEEEE1001BF483 /* NoGoImage.png */,
+				F1D6833515DEEEE1001BF483 /* GoImage.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F15A503F15AD31F6003D909D /* DAT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15A505E15AD31F6003D909D /* Build configuration list for PBXNativeTarget "DAT" */;
+			buildPhases = (
+				F15A503C15AD31F6003D909D /* Sources */,
+				F15A503D15AD31F6003D909D /* Frameworks */,
+				F15A503E15AD31F6003D909D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DAT;
+			productName = DAT;
+			productReference = F15A504015AD31F6003D909D /* DAT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F15A503715AD31F6003D909D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DAT;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = F15A503A15AD31F6003D909D /* Build configuration list for PBXProject "DAT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F15A503515AD31F6003D909D;
+			productRefGroup = F15A504115AD31F6003D909D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F15A503F15AD31F6003D909D /* DAT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F15A503E15AD31F6003D909D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15A504F15AD31F6003D909D /* InfoPlist.strings in Resources */,
+				F15A505815AD31F6003D909D /* MainStoryboard.storyboard in Resources */,
+				F12A66ED15B3CB8F004133EA /* glassClink.wav in Resources */,
+				F12A66EE15B3CB8F004133EA /* beep.wav in Resources */,
+				F1E63D8C15DAD30C0016309F /* labLogo.png in Resources */,
+				F1E63D9D15DC1F410016309F /* iOS Simulator Screen shot Aug 15, 2012 11.16.38 AM.png in Resources */,
+				F1D6833615DEEEE1001BF483 /* NoGoImage.png in Resources */,
+				F1D6833715DEEEE1001BF483 /* GoImage.png in Resources */,
+				F14FA6C715DF01B200AD6100 /* Check.png in Resources */,
+				F1E5258F1676925700904354 /* gaugeImage.png in Resources */,
+				F1F468E816ADE720005555C9 /* gaugeImageflip.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F15A503C15AD31F6003D909D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15A505115AD31F6003D909D /* main.m in Sources */,
+				F15A505515AD31F6003D909D /* DATAppDelegate.m in Sources */,
+				F15A505B15AD31F6003D909D /* DATViewController.m in Sources */,
+				F15A506315AD324C003D909D /* DATDataLogger.m in Sources */,
+				F19E70B115B24EF4009C6D60 /* DATQue.m in Sources */,
+				F12A66E015B3C3C6004133EA /* DATLevelTracker.m in Sources */,
+				F12A66F515B3CCBA004133EA /* AudioController.m in Sources */,
+				F1DBC30B15D95E1600084EE3 /* DATMainMenuViewController.m in Sources */,
+				F1DBC31615D9689800084EE3 /* DATCalibrationViewController.m in Sources */,
+				F11AA8F615D9ADC6004CBC4B /* DATNavigationController.m in Sources */,
+				F1E63D9715DB0CA80016309F /* DATSimpleViewControllerViewController.m in Sources */,
+				F1A2E2BD15F677710012F67F /* DATTrainingViewController.m in Sources */,
+				F1A2E2C015F679A10012F67F /* DATLeveTrackerTwo.m in Sources */,
+				F11EDDDF16C5BD1300AE717B /* barGrapher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F15A504D15AD31F6003D909D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F15A504E15AD31F6003D909D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F15A505615AD31F6003D909D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F15A505715AD31F6003D909D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F15A505C15AD31F6003D909D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		F15A505D15AD31F6003D909D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F15A505F15AD31F6003D909D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DAT/DAT-Prefix.pch";
+				INFOPLIST_FILE = "DAT/DAT-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F15A506015AD31F6003D909D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DAT/DAT-Prefix.pch";
+				INFOPLIST_FILE = "DAT/DAT-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F15A503A15AD31F6003D909D /* Build configuration list for PBXProject "DAT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15A505C15AD31F6003D909D /* Debug */,
+				F15A505D15AD31F6003D909D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15A505E15AD31F6003D909D /* Build configuration list for PBXNativeTarget "DAT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15A505F15AD31F6003D909D /* Debug */,
+				F15A506015AD31F6003D909D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F15A503715AD31F6003D909D /* Project object */;
+}
