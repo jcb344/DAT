@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "barGrapher.h"
+#import "GAZZCloud.h"
 
 @interface DATMainMenuViewController : UIViewController <MFMailComposeViewControllerDelegate>{
     
@@ -45,14 +46,20 @@
     IBOutlet UISlider *percentCorrectToProgSlider;
     IBOutlet UISlider *errorMarginSlider;
     IBOutlet UISlider *stepSizeSlider;
+    IBOutlet UISlider *cueProbeTimeSlider;
+    IBOutlet UISlider *cueProbeRandomSlider;
     IBOutlet UISlider *goalReleaseTime;
     IBOutlet UILabel *percentCorrectToProgLabel;
     IBOutlet UILabel *errorMarginLabel;
     IBOutlet UILabel *stepSizeLabel;
     IBOutlet UILabel *goalReleaseTimeLabel;
+    IBOutlet UILabel *cueProbeTimeLabel;
+    IBOutlet UILabel *cueProbeRandomLabel;
     
     IBOutlet UISlider *probeSizeSlider;
+    IBOutlet UISlider *activeProbeSizeSlider;
     IBOutlet UILabel *probeSizeLabel;
+    IBOutlet UILabel *activeSizeLabel;
     
     // Analytics
     IBOutlet UIView *analyticView;
@@ -81,6 +88,8 @@
 
 -(IBAction)clearDataPressed:(id)sender;
 -(IBAction)doneSendPressed:(id)sender;
+
+-(IBAction)printJSON:(id)sender;
 
 // Training perameter actions
 

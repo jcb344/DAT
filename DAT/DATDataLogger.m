@@ -20,6 +20,7 @@
 @synthesize currentReleaseReactionTimeGoal;
 @synthesize distanceFromProbe;
 @synthesize shouldPressProbe;
+@synthesize currentCueProbeTime;
 
 -(id)init {
     if (self = [super init]) {
@@ -95,6 +96,7 @@
                    [NSNumber numberWithInt:currentReleaseReactionTimeGoal],@"currentReleaseReactionTimeGoal",
                    [NSNumber numberWithBool:correct],@"sucsess",
                    [NSNumber numberWithFloat:distanceFromProbe],@"distanceFromProbe",
+                   [NSNumber numberWithFloat:currentCueProbeTime],@"cueProbeTime",
                    [NSNumber numberWithBool:shouldPressProbe],@"shouldPressProbe",
                    nil];
     

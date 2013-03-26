@@ -34,6 +34,7 @@
     int currentReactionTime;
     int currentLevel;
     float distanceFromProbe;
+    float currentCueProbeTime;
     BOOL shouldPressProbe;
 }
 
@@ -45,6 +46,7 @@
 @property (assign) int   currentReleaseReactionTime;
 @property (assign) int   currentReleaseReactionTimeGoal;
 @property (assign) int   currentReactionTime;
+@property (assign) float  currentCueProbeTime;
 @property (assign) float distanceFromProbe;
 @property (assign) BOOL  shouldPressProbe;
 

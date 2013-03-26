@@ -25,6 +25,7 @@
 		F15A505B15AD31F6003D909D /* DATViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A505A15AD31F6003D909D /* DATViewController.m */; };
 		F15A506315AD324C003D909D /* DATDataLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A506215AD324C003D909D /* DATDataLogger.m */; };
 		F15A506915ADED47003D909D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A506815ADED47003D909D /* QuartzCore.framework */; };
+		F1985A2216FBB56000E3E154 /* GAZZCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = F1985A2116FBB56000E3E154 /* GAZZCloud.m */; };
 		F19E70B115B24EF4009C6D60 /* DATQue.m in Sources */ = {isa = PBXBuildFile; fileRef = F19E70B015B24EF4009C6D60 /* DATQue.m */; };
 		F1A2E2BD15F677710012F67F /* DATTrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A2E2BC15F677710012F67F /* DATTrainingViewController.m */; };
 		F1A2E2C015F679A10012F67F /* DATLeveTrackerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A2E2BF15F679A10012F67F /* DATLeveTrackerTwo.m */; };
@@ -69,6 +70,8 @@
 		F15A506115AD324C003D909D /* DATDataLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATDataLogger.h; sourceTree = "<group>"; };
 		F15A506215AD324C003D909D /* DATDataLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATDataLogger.m; sourceTree = "<group>"; };
 		F15A506815ADED47003D909D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F1985A2016FBB56000E3E154 /* GAZZCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAZZCloud.h; sourceTree = "<group>"; };
+		F1985A2116FBB56000E3E154 /* GAZZCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAZZCloud.m; sourceTree = "<group>"; };
 		F19E70AF15B24EF4009C6D60 /* DATQue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATQue.h; sourceTree = "<group>"; };
 		F19E70B015B24EF4009C6D60 /* DATQue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATQue.m; sourceTree = "<group>"; };
 		F1A2E2BB15F677710012F67F /* DATTrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATTrainingViewController.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 		F1DBC31215D9629700084EE3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F1985A2016FBB56000E3E154 /* GAZZCloud.h */,
+				F1985A2116FBB56000E3E154 /* GAZZCloud.m */,
 				F11EDDDD16C5BD1300AE717B /* barGrapher.h */,
 				F11EDDDE16C5BD1300AE717B /* barGrapher.m */,
 				F15A506115AD324C003D909D /* DATDataLogger.h */,
@@ -312,6 +317,7 @@
 				F1A2E2BD15F677710012F67F /* DATTrainingViewController.m in Sources */,
 				F1A2E2C015F679A10012F67F /* DATLeveTrackerTwo.m in Sources */,
 				F11EDDDF16C5BD1300AE717B /* barGrapher.m in Sources */,
+				F1985A2216FBB56000E3E154 /* GAZZCloud.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

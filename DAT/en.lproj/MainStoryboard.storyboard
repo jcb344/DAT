@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="2Fm-51-FmH">
-                                <rect key="frame" x="20" y="500" width="728" height="367"/>
+                                <rect key="frame" x="20" y="500" width="728" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="WNl-Iu-b2D">
@@ -102,7 +102,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LLT-zq-Qxn">
-                                        <rect key="frame" x="315" y="310" width="72" height="37"/>
+                                        <rect key="frame" x="315" y="380" width="72" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Save">
@@ -288,22 +288,22 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="5" maxValue="160" id="siQ-yV-QHw">
-                                        <rect key="frame" x="18" y="249" width="253" height="23"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="20" maxValue="180" id="siQ-yV-QHw">
+                                        <rect key="frame" x="113" y="249" width="188" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="stepperChanged:" destination="hFr-v8-jNK" eventType="valueChanged" id="9dy-J7-H0P"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cug-pW-pJU">
-                                        <rect key="frame" x="277" y="250" width="63" height="21"/>
+                                        <rect key="frame" x="290" y="250" width="63" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Size of Probe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="r0t-C4-phS">
-                                        <rect key="frame" x="37" y="220" width="214" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Size of Probe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="r0t-C4-phS">
+                                        <rect key="frame" x="-27" y="249" width="135" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,7 +342,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.60000000000000009" contentMode="scaleToFill" id="81X-6K-7S7">
-                                        <rect key="frame" x="10" y="9" width="708" height="350"/>
+                                        <rect key="frame" x="599" y="355" width="708" height="350"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dwe-bs-dIj">
@@ -371,7 +371,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="04u-bt-yG9">
-                                        <rect key="frame" x="310" y="308" width="87" height="44"/>
+                                        <rect key="frame" x="308" y="377" width="87" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Close">
@@ -385,11 +385,74 @@
                                             <action selector="setupSaved:" destination="hFr-v8-jNK" eventType="touchUpInside" id="Uvr-pc-HD2"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="20" maxValue="180" id="70y-ah-fux">
+                                        <rect key="frame" x="113" y="279" width="188" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="hFr-v8-jNK" eventType="valueChanged" id="2rM-5q-GM7"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Active Size" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="QRo-xN-8PM">
+                                        <rect key="frame" x="-28" y="280" width="135" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Xcw-et-dwS">
+                                        <rect key="frame" x="290" y="280" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="10" id="KEf-JI-X8D">
+                                        <rect key="frame" x="519" y="302" width="143" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="hFr-v8-jNK" eventType="valueChanged" id="JNl-Xb-ioj"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cue to Probe Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="11v-bv-pLp">
+                                        <rect key="frame" x="290" y="302" width="214" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ZZu-vj-4kD">
+                                        <rect key="frame" x="668" y="302" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0" maxValue="5" id="NP2-Ms-1iV">
+                                        <rect key="frame" x="519" y="332" width="143" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="hFr-v8-jNK" eventType="valueChanged" id="Grl-nd-jEa"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cue to Probe Random ±" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kjG-uC-JrP">
+                                        <rect key="frame" x="290" y="331" width="214" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TXF-du-gmE">
+                                        <rect key="frame" x="668" y="333" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" id="LUa-BW-cHd">
-                                <rect key="frame" x="20" y="500" width="728" height="408"/>
+                                <rect key="frame" x="655" y="279" width="728" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="No Data" id="qTb-RX-yFn">
@@ -478,8 +541,8 @@
                                     <action selector="analyticsPressed:" destination="hFr-v8-jNK" eventType="touchUpInside" id="oMt-Rp-lTN"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="ReU-43-zO5">
-                                <rect key="frame" x="20" y="482" width="728" height="502"/>
+                            <view hidden="YES" contentMode="scaleToFill" id="ReU-43-zO5">
+                                <rect key="frame" x="750" y="428" width="728" height="502"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="dpq-ar-yGy">
@@ -584,6 +647,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kcn-WT-xaY">
+                                <rect key="frame" x="52" y="183" width="65" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="JSON">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="printJSON:" destination="hFr-v8-jNK" eventType="touchUpInside" id="m5N-g1-h68"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -592,12 +670,18 @@
                     <connections>
                         <outlet property="RTChangeLabel" destination="LnM-iU-OFv" id="ycV-u0-jp3"/>
                         <outlet property="RTChangeSlider" destination="iSb-bO-lvH" id="DKM-dY-ve3"/>
+                        <outlet property="activeProbeSizeSlider" destination="70y-ah-fux" id="tzP-Zc-7ng"/>
+                        <outlet property="activeSizeLabel" destination="Xcw-et-dwS" id="h6K-J3-ZRa"/>
                         <outlet property="analyticView" destination="ReU-43-zO5" id="DpJ-vx-lPr"/>
                         <outlet property="checkOne" destination="cl5-YF-hZp" id="yBZ-VD-lzK"/>
                         <outlet property="checkThree" destination="eNG-Sa-RS2" id="bEu-Ve-vv5"/>
                         <outlet property="checkTwo" destination="mDY-vk-a1i" id="od6-5O-1xR"/>
                         <outlet property="clearButton" destination="t2o-9C-DNs" id="Mw3-yU-2D9"/>
                         <outlet property="closeLockButton" destination="04u-bt-yG9" id="vzC-GD-Dwz"/>
+                        <outlet property="cueProbeRandomLabel" destination="TXF-du-gmE" id="SnT-99-bUP"/>
+                        <outlet property="cueProbeRandomSlider" destination="NP2-Ms-1iV" id="bbR-x4-myZ"/>
+                        <outlet property="cueProbeTimeLabel" destination="ZZu-vj-4kD" id="CH4-pB-yDp"/>
+                        <outlet property="cueProbeTimeSlider" destination="KEf-JI-X8D" id="Aw9-kT-U3s"/>
                         <outlet property="dataView" destination="qTb-RX-yFn" id="xT8-2g-mwP"/>
                         <outlet property="discriminationSwitch" destination="mgH-M7-5zK" id="x0b-q6-4Pm"/>
                         <outlet property="endDateLabel" destination="EKe-UJ-ffH" id="dUW-3W-gha"/>
@@ -821,14 +905,50 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="Yfs-in-izg">
+                                <rect key="frame" x="312" y="683" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jsJ-pX-8H5">
+                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Meu-sz-XEg">
+                                        <rect key="frame" x="0.0" y="1" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:withEvent:" destination="Sxk-al-LRD" eventType="touchDown" id="Tov-Tq-Tnx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="YrD-rC-nVx"/>
                     <connections>
+                        <outlet property="ButtonToPress" destination="Meu-sz-XEg" id="noq-eQ-Gqu"/>
                         <outlet property="backButton" destination="zuR-hF-3KC" id="j3D-gi-5F8"/>
                         <outlet property="backgroundButton" destination="Brl-Sh-D3Q" id="Mc4-O5-aYg"/>
+                        <outlet property="buttonHolder" destination="Yfs-in-izg" id="yCh-Mw-ZLc"/>
                         <outlet property="homeButton" destination="oBE-H0-Ts1" id="E9h-4j-jvp"/>
+                        <outlet property="innerButton" destination="jsJ-pX-8H5" id="ggu-R1-d7z"/>
                         <outlet property="levelLabel" destination="j8d-C2-ZDH" id="Vpg-mX-ai0"/>
                         <outlet property="startStopButton" destination="0Gu-Ns-7yA" id="hZJ-aw-VcQ"/>
                         <outlet property="touchHomePromt" destination="ZmJ-cD-18h" id="dqU-jK-LzO"/>
@@ -944,6 +1064,39 @@
                                     <action selector="buttonPressed:withEvent:" destination="wg9-Og-kcM" eventType="touchDown" id="nrK-1k-dC0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="YrG-fn-R0N">
+                                <rect key="frame" x="10" y="64" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bRc-pg-ljr">
+                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ivJ-Sl-D5S">
+                                        <rect key="frame" x="0.0" y="1" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:withEvent:" destination="wg9-Og-kcM" eventType="touchDown" id="z57-U2-KSD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d6P-se-ouz">
                                 <rect key="frame" x="148" y="0.0" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1066,13 +1219,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="f6R-K2-sQ8"/>
                     <connections>
+                        <outlet property="ButtonToPress" destination="ivJ-Sl-D5S" id="KSP-m1-ymp"/>
                         <outlet property="RTGoalLabel" destination="zpx-6V-JTM" id="WA4-55-gxE"/>
                         <outlet property="TrialsLabel" destination="oxi-yH-9sY" id="V3s-cr-zd8"/>
                         <outlet property="backButton" destination="gLA-BA-ysY" id="US3-C3-8S0"/>
                         <outlet property="backgroundButton" destination="AXX-MS-jRM" id="LAq-kD-7wj"/>
+                        <outlet property="buttonHolder" destination="YrG-fn-R0N" id="FqY-T7-WZE"/>
                         <outlet property="goalGauge" destination="YRw-HK-V2T" id="L00-Zm-vs2"/>
                         <outlet property="goalIndicator" destination="NID-lW-PeJ" id="hyd-Xd-onB"/>
                         <outlet property="homeButton" destination="FmV-oW-pKK" id="lMD-0Q-efQ"/>
+                        <outlet property="innerButton" destination="bRc-pg-ljr" id="1pG-aM-X4W"/>
                         <outlet property="lastRectionTime" destination="F11-aI-7dZ" id="yta-co-nGS"/>
                         <outlet property="leftHomeButton" destination="DFb-vH-nYH" id="xbB-zD-71c"/>
                         <outlet property="startStopButton" destination="d6P-se-ouz" id="QnC-pl-qmR"/>
@@ -1111,6 +1267,7 @@
                 <relationship kind="action" name="analyticsPressed:"/>
                 <relationship kind="action" name="clearDataPressed:"/>
                 <relationship kind="action" name="doneSendPressed:"/>
+                <relationship kind="action" name="printJSON:"/>
                 <relationship kind="action" name="sendData:"/>
                 <relationship kind="action" name="sendPressed:"/>
                 <relationship kind="action" name="setupPressed:"/>
@@ -1119,12 +1276,18 @@
                 <relationship kind="action" name="unlockPressed:"/>
                 <relationship kind="outlet" name="RTChangeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="RTChangeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="activeProbeSizeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="activeSizeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="analyticView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="checkOne" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="checkThree" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="checkTwo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="clearButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="closeLockButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cueProbeRandomLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cueProbeRandomSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="cueProbeTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cueProbeTimeSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="dataView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="discriminationSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
@@ -1184,7 +1347,9 @@
                 <relationship kind="outlet" name="TrialsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backgroundButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonHolder" candidateClass="UIView"/>
                 <relationship kind="outlet" name="homeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="innerButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="touchHomePromt" candidateClass="UILabel"/>
@@ -1204,9 +1369,11 @@
                 <relationship kind="outlet" name="TrialsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backgroundButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonHolder" candidateClass="UIView"/>
                 <relationship kind="outlet" name="goalGauge" candidateClass="UIView"/>
                 <relationship kind="outlet" name="goalIndicator" candidateClass="UIView"/>
                 <relationship kind="outlet" name="homeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="innerButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="lastRectionTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="leftHomeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>

@@ -21,7 +21,10 @@
 @synthesize discriminationState;
 @synthesize testComplete;
 @synthesize probeSize;
+@synthesize activeSize;
 @synthesize rightState;
+@synthesize cueProbeTime;
+@synthesize cueProbeRandom;
 
 -(void)setRTChange:(int)r{
     RTChange = r;
@@ -55,7 +58,10 @@
         errorMargin = [[file objectForKey:@"errorMargin"] intValue];
         stepSize = [[file objectForKey:@"stepSize"] intValue];
         goalRelease = [[file objectForKey:@"goalRelease"] intValue];
+        cueProbeTime = [[file objectForKey:@"cueProbeTime"] intValue];
+        cueProbeRandom = [[file objectForKey:@"cueProbeRandom"] intValue];
         probeSize = [[file objectForKey:@"probeSize"] intValue];
+        activeSize = [[file objectForKey:@"activeSize"] intValue];
         
         testComplete = [[file objectForKey:@"testComplete"] boolValue];
         soundState = [[file objectForKey:@"soundState"] boolValue];
@@ -96,7 +102,11 @@
     [file setObject:[NSNumber numberWithInt:errorMargin] forKey:@"errorMargin"];
     [file setObject:[NSNumber numberWithInt:stepSize] forKey:@"stepSize"];
     [file setObject:[NSNumber numberWithInt:goalRelease] forKey:@"goalRelease"];
+    [file setObject:[NSNumber numberWithInt:cueProbeTime] forKey:@"cueProbeTime"];
+    [file setObject:[NSNumber numberWithInt:cueProbeRandom] forKey:@"cueProbeRandom"];
+    
     [file setObject:[NSNumber numberWithInt:probeSize] forKey:@"probeSize"];
+    [file setObject:[NSNumber numberWithInt:activeSize] forKey:@"activeSize"];
     
     [file setObject:[NSNumber numberWithBool:testComplete] forKey:@"testComplete"];
     [file setObject:[NSNumber numberWithBool:soundState] forKey:@"soundState"];

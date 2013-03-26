@@ -143,31 +143,42 @@ float distance(x1,x2,y1,y2){
 -(void)hideFlash {
     [que displayCross];
     [que setNeedsDisplay];
-    delayTimer = [NSTimer scheduledTimerWithTimeInterval:[leveL currentWaitTime] target:self selector:@selector(displayButtonAtRandomLocation) userInfo:nil repeats:NO];
+    
+    int i = [self.navigationController cueProbeTime];
+    int j = [self.navigationController cueProbeRandom];
+    
+    float randomTime =  (((float)(arc4random()%100))/100 * 2*(((float) j/1000)) ) - (((float) j/1000));
+    float cueProbeTime = (((float)i/1000))+randomTime;
+    [dataLogger setCurrentCueProbeTime:cueProbeTime];
+    
+    delayTimer = [NSTimer scheduledTimerWithTimeInterval:(((float)i/1000))+randomTime target:self selector:@selector(displayButtonAtRandomLocation) userInfo:nil repeats:NO];
 }
 
 -(void)displayButtonAtRandomLocation{
     
     int theta = [leveL trainingCurrentTheta];
     
-    CGRect buttonLocation = CGRectMake(radius*cos(pi*theta/180.0)+centerX-buttonWidth/2, radius*sin(pi*theta/180.0)+centerY-buttonHeight/2, buttonWidth, buttonHeight);
+    CGRect buttonLocation = CGRectMake(radius*cos(pi*theta/180.0)+centerX-buttonWidth/2, radius*sin(pi*theta/180.0)+centerY-buttonHeight/2, activeButtonWidth, activeButtonHeight);
     //NSLog(@"x:%f,y:%f",buttonLocation.origin.x,buttonLocation.origin.y);
-    ButtonToPress = [UIButton buttonWithType:UIButtonTypeCustom];
-    [ButtonToPress setFrame:buttonLocation];
+    //ButtonToPress = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[ButtonToPress setFrame:buttonLocation];
+    [buttonHolder setFrame:buttonLocation];
+    [buttonHolder setHidden:NO];
+    
     if (goNoGoTest) {
         if (arc4random()%5 == 0) {
-            [ButtonToPress setBackgroundImage:noGoImage forState:UIControlStateNormal];
+            [innerButton setBackgroundImage:noGoImage forState:UIControlStateNormal];
         }
         else {
-            [ButtonToPress setBackgroundImage:goImage forState:UIControlStateNormal];
+            [innerButton setBackgroundImage:goImage forState:UIControlStateNormal];
         }
     }
     else {
-        [ButtonToPress setBackgroundImage:goImage forState:UIControlStateNormal];
+        [innerButton setBackgroundImage:goImage forState:UIControlStateNormal];
     }
-    [ButtonToPress addTarget:self action:@selector(buttonPressed:withEvent:) forControlEvents:UIControlEventTouchDown];
+    //[ButtonToPress addTarget:self action:@selector(buttonPressed:withEvent:) forControlEvents:UIControlEventTouchDown];
     
-    [self.view addSubview:ButtonToPress];
+    //[self.view addSubview:ButtonToPress];
     //[homeButton setHidden:YES];
     [backgroundButton setHidden:NO];
     homeShouldBeHeld = NO;
@@ -186,7 +197,7 @@ float distance(x1,x2,y1,y2){
 -(void)buttonTimeOut{
     [dataLogger setDistanceFromProbe:0];
     
-    if ([ButtonToPress backgroundImageForState:UIControlStateNormal] == noGoImage) {
+    if ([innerButton backgroundImageForState:UIControlStateNormal] == noGoImage) {
         [dataLogger setShouldPressProbe:NO];
         [dataLogger logGameSessionDataCorrect:YES];
         if (soundState) {
@@ -194,7 +205,7 @@ float distance(x1,x2,y1,y2){
             [self setBackToGood];
         }
     }
-    else if ([ButtonToPress backgroundImageForState:UIControlStateNormal]  == goImage) {
+    else if ([innerButton backgroundImageForState:UIControlStateNormal]  == goImage) {
         [dataLogger setShouldPressProbe:YES];
         [dataLogger logGameSessionDataCorrect:NO];
         if (soundState) {
@@ -205,9 +216,9 @@ float distance(x1,x2,y1,y2){
     [delayTimer invalidate];
     delayTimer = Nil;
     
-    [backgroundButton setHidden:YES];
-    [ButtonToPress removeFromSuperview];
-    ButtonToPress = nil;
+    [buttonHolder setHidden:YES];
+    //[ButtonToPress removeFromSuperview];
+    //ButtonToPress = nil;
     
     
     
@@ -242,8 +253,8 @@ float distance(x1,x2,y1,y2){
     }
     
     // Calculate Distance
-    float xCenterButton = ButtonToPress.frame.origin.x + ButtonToPress.frame.size.width/2.f;
-    float yCenterButton = ButtonToPress.frame.origin.y + ButtonToPress.frame.size.height/2.f;
+    float xCenterButton = buttonHolder.frame.origin.x + buttonHolder.frame.size.width/2.f;
+    float yCenterButton = buttonHolder.frame.origin.y + buttonHolder.frame.size.height/2.f;
     
     NSSet * touches = [event allTouches];
     UITouch *touch = [touches anyObject];
@@ -253,7 +264,7 @@ float distance(x1,x2,y1,y2){
     NSLog(@"distance: %f",radius);
     
     
-    if ([ButtonToPress backgroundImageForState:UIControlStateNormal]  == goImage) {
+    if ([innerButton backgroundImageForState:UIControlStateNormal]  == goImage) {
         [dataLogger setShouldPressProbe:YES];
         [dataLogger setDistanceFromProbe:radius];
     }
@@ -264,7 +275,7 @@ float distance(x1,x2,y1,y2){
     
     
     if (sender == ButtonToPress && LeftHomePressed == YES && homePressed == NO) {
-        if ([sender backgroundImageForState:UIControlStateNormal] == goImage) {
+        if ([innerButton backgroundImageForState:UIControlStateNormal] == goImage) {
             [dataLogger logGameSessionDataCorrect:YES];
             //[leveL logRoundResult:TRUE];
             [leveL trainingLogRoundResult:TRUE withRT:(float)[dataLogger currentReleaseReactionTime]];
@@ -283,7 +294,7 @@ float distance(x1,x2,y1,y2){
             }
         
         }
-        else if ([sender backgroundImageForState:UIControlStateNormal] == noGoImage){
+        else if ([innerButton backgroundImageForState:UIControlStateNormal] == noGoImage){
             [dataLogger logGameSessionDataCorrect:NO];
             [leveL trainingLogRoundResult:FALSE withRT:(float)[dataLogger currentReleaseReactionTime]];
             if (soundState) {
@@ -319,8 +330,9 @@ float distance(x1,x2,y1,y2){
     */
      
     [backgroundButton setHidden:YES];
-    [ButtonToPress removeFromSuperview];
-    ButtonToPress = nil;
+    //[ButtonToPress removeFromSuperview];
+    //ButtonToPress = nil;
+    [buttonHolder setHidden:YES];
     
     // Prompt for breaks
     //[homeButton setHidden:NO];
@@ -365,6 +377,14 @@ float distance(x1,x2,y1,y2){
     
     buttonWidth = [self.navigationController probeSize];
     buttonHeight = [self.navigationController probeSize];
+    activeButtonWidth = [self.navigationController activeSize];
+    activeButtonHeight = [self.navigationController activeSize];
+    
+    CGRect centeredFrame = CGRectMake( ((activeButtonWidth-buttonWidth)/2), ((activeButtonWidth-buttonWidth)/2), buttonWidth, buttonHeight);
+    [buttonHolder setFrame:CGRectMake(0, 0, activeButtonWidth, activeButtonHeight)];
+    [ButtonToPress setFrame:CGRectMake(0, 0, activeButtonWidth, activeButtonHeight)];
+    [innerButton setFrame:centeredFrame];
+    
     
     BOOL s = [self.navigationController rightState];
     if ( s) {

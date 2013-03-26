@@ -36,7 +36,10 @@
 @property (assign) int errorMargin;
 @property (assign) int stepSize;
 @property (assign) int goalRelease;
+@property (assign) int cueProbeTime;
+@property (assign) int cueProbeRandom;
 @property (assign) int probeSize;
+@property (assign) int activeSize;
 
 @property (assign) BOOL testComplete;
 @property (assign) BOOL soundState;

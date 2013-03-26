@@ -42,10 +42,29 @@
         [goalReleaseTimeLabel setText:[NSString stringWithFormat:@"%2.f",[goalReleaseTime value]]];
     }
     else if (sender == probeSizeSlider) {
+        if ([activeProbeSizeSlider value] < [probeSizeSlider value]) {
+            [activeProbeSizeSlider setValue:[probeSizeSlider value]];
+            [activeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[activeProbeSizeSlider value]]];
+        }
         [probeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[probeSizeSlider value]]];
+    }
+    else if (sender == activeProbeSizeSlider) {
+        if ([activeProbeSizeSlider value] < [probeSizeSlider value]) {
+            [activeProbeSizeSlider setValue:[probeSizeSlider value]];
+        }
+        [activeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[activeProbeSizeSlider value]]];
     }
     else if (sender == RTChangeSlider) {
         [RTChangeLabel setText:[NSString stringWithFormat:@"%2.f",[RTChangeSlider value]]];
+    }
+    else if (sender == cueProbeTimeSlider) {
+        [cueProbeTimeLabel setText:[NSString stringWithFormat:@"%.1f",[cueProbeTimeSlider value]]];
+    }
+    else if (sender == cueProbeRandomSlider) {
+        if ([cueProbeRandomSlider value] > [cueProbeTimeSlider value]) {
+            [cueProbeRandomSlider setValue:[cueProbeTimeSlider value]];
+        }
+        [cueProbeRandomLabel setText:[NSString stringWithFormat:@"%.1f",[cueProbeRandomSlider value]]];
     }
 }
 
@@ -118,6 +137,13 @@
     [analyticView setHidden:YES];
 }
 
+-(IBAction)printJSON:(id)sender{
+    GAZZCloud *JSON = [[GAZZCloud alloc] init];
+    [JSON postJSONOf:[self.navigationController logData] toAdress:@"http://localhost/~jacobbalthazor/ucsf/no.php"];//@"http://cerebrum.ucsf.edu/datapost"];
+    NSLog(@"done");
+    //NSLog(@"%@",[JSON JSONForArray:[self.navigationController logData]]);
+}
+
 -(IBAction)sendPressed:(id)sender{
     [setupView setHidden:YES];
     [analyticView setHidden:YES];
@@ -166,11 +192,14 @@
     [self.navigationController setRTChange:(int)(1000*[RTChangeSlider value])];
     [self.navigationController setPercentCorrectToProg:(int)(1000*[percentCorrectToProgSlider value])];
     [self.navigationController setStepSize:(int)(1000*[stepSizeSlider value])];
+    [self.navigationController setCueProbeTime:(int)(1000*[cueProbeTimeSlider value])];
+    [self.navigationController setCueProbeRandom:(int)(1000*[cueProbeRandomSlider value])];
     
     [self.navigationController setLevelUp:(int)[levelUpStepper value]];
     [self.navigationController setLevelDown:(int)[levelDownStepper value]];
     [self.navigationController setHeatlength:(int)[heatlengthStepper value]];
     [self.navigationController setProbeSize:(int)[probeSizeSlider value]];
+    [self.navigationController setActiveSize:(int)[activeProbeSizeSlider value]];
     
     [self.navigationController setName:[nameField text]];
     [self.navigationController setSoundState:[soundSwitch isOn]];
@@ -329,6 +358,8 @@
         [heatlengthStepper setValue:(float)i];
         i = [self.navigationController probeSize];
         [probeSizeSlider setValue:(float)i];
+        i = [self.navigationController activeSize];
+        [activeProbeSizeSlider setValue:(float)i];
         
         i = [self.navigationController percentCorrectToProg];
         [percentCorrectToProgSlider setValue:(float)i/1000.f];
@@ -340,6 +371,11 @@
         [stepSizeSlider setValue:(float)i/1000.f];
         i = [self.navigationController goalRelease];
         [goalReleaseTime setValue:(float)i/1000.f];
+        i = [self.navigationController cueProbeRandom];
+        [cueProbeRandomSlider setValue:(float)i/1000.f];
+        i = [self.navigationController cueProbeTime];
+        [cueProbeTimeSlider setValue:(float)i/1000.f];
+        
         
         BOOL j = [self.navigationController soundState];
         [soundSwitch setOn:j];
@@ -357,7 +393,10 @@
     [errorMarginLabel setText:[NSString stringWithFormat:@"%.2f",[errorMarginSlider value]]];
     [stepSizeLabel setText:[NSString stringWithFormat:@"%.3f",[stepSizeSlider value]]];
     [goalReleaseTimeLabel setText:[NSString stringWithFormat:@"%2.f",[goalReleaseTime value]]];
+    [cueProbeTimeLabel setText:[NSString stringWithFormat:@"%.1f",[cueProbeTimeSlider value]]];
+    [cueProbeRandomLabel setText:[NSString stringWithFormat:@"%.1f",[cueProbeRandomSlider value]]];
     [probeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[probeSizeSlider value]]];
+    [activeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[activeProbeSizeSlider value]]];
     [RTChangeLabel setText:[NSString stringWithFormat:@"%2.f",[RTChangeSlider value]]];
     if ([self.navigationController name] != nil) {
         [nameField setText:[self.navigationController name]];

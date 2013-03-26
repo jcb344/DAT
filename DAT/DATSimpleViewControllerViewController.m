@@ -28,7 +28,7 @@ float distancE(x1,x2,y1,y2){
     if (inSession) {
         NSLog(@"Finished Trial");
         [dataLogger endGameSessionWithLevel:0];
-        [dataLogger printGameData];
+        //[dataLogger printGameData];
         inSession = NO;
         [startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [self saveData];
@@ -96,31 +96,39 @@ float distancE(x1,x2,y1,y2){
 -(void)hideFlash {
     [que displayCross];
     [que setNeedsDisplay];
-    delayTimer = [NSTimer scheduledTimerWithTimeInterval:[level currentWaitTime] target:self selector:@selector(displayButtonAtRandomLocation) userInfo:nil repeats:NO];
+    int i = [self.navigationController cueProbeTime];
+    int j = [self.navigationController cueProbeRandom];
+    
+    float randomTime =  (((float)(arc4random()%100))/100 * 2*(((float) j/1000)) ) - (((float) j/1000));
+    float cueProbeTime = (((float)i/1000))+randomTime;
+    [dataLogger setCurrentCueProbeTime:cueProbeTime];
+    
+    delayTimer = [NSTimer scheduledTimerWithTimeInterval:cueProbeTime target:self selector:@selector(displayButtonAtRandomLocation) userInfo:nil repeats:NO];
 }
 
 -(void)displayButtonAtRandomLocation{
     
     int theta = [level simpleCurrentTheta];
     
-    CGRect buttonLocation = CGRectMake(radius*cos(pi*theta/180.0)+centerX-buttonWidth/2, radius*sin(pi*theta/180.0)+centerY-buttonHeight/2, buttonWidth, buttonHeight);
+    CGRect buttonLocation = CGRectMake(radius*cos(pi*theta/180.0)+centerX-buttonWidth/2, radius*sin(pi*theta/180.0)+centerY-buttonHeight/2, activeButtonWidth,activeButtonHeight);
     //NSLog(@"x:%f,y:%f",buttonLocation.origin.x,buttonLocation.origin.y);
-    ButtonToPress = [UIButton buttonWithType:UIButtonTypeCustom];
-    [ButtonToPress setFrame:buttonLocation];
+    //ButtonToPress = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonHolder setFrame:buttonLocation];
+    [buttonHolder setHidden:NO];
     if (goNoGoTest) {
         if (arc4random()%5 == 0) {
-            [ButtonToPress setBackgroundImage:noGoImage forState:UIControlStateNormal];
+            [innerButton setBackgroundImage:noGoImage forState:UIControlStateNormal];
         }
         else {
-            [ButtonToPress setBackgroundImage:goImage forState:UIControlStateNormal];
+            [innerButton setBackgroundImage:goImage forState:UIControlStateNormal];
         }
     }
     else {
-        [ButtonToPress setBackgroundImage:goImage forState:UIControlStateNormal];
+        [innerButton setBackgroundImage:goImage forState:UIControlStateNormal];
     }
-    [ButtonToPress addTarget:self action:@selector(buttonPressed:withEvent:) forControlEvents:UIControlEventTouchDown];
+    //[ButtonToPress addTarget:self action:@selector(buttonPressed:withEvent:) forControlEvents:UIControlEventTouchDown];
     
-    [self.view addSubview:ButtonToPress];
+    //[self.view addSubview:ButtonToPress];
     //[homeButton setHidden:YES];
     [backgroundButton setHidden:NO];
     homeShouldBeHeld = NO;
@@ -134,7 +142,7 @@ float distancE(x1,x2,y1,y2){
 -(void)buttonTimeOut{
     [dataLogger setDistanceFromProbe:0];
 
-    if ([ButtonToPress backgroundImageForState:UIControlStateNormal] == noGoImage) {
+    if ([innerButton backgroundImageForState:UIControlStateNormal] == noGoImage) {
         [dataLogger setShouldPressProbe:NO];
         [dataLogger logGameSessionDataCorrect:YES];
         if (soundState) {
@@ -142,7 +150,7 @@ float distancE(x1,x2,y1,y2){
             [self setBackToGood];
         }
     }
-    else if ([ButtonToPress backgroundImageForState:UIControlStateNormal]  == goImage) {
+    else if ([innerButton backgroundImageForState:UIControlStateNormal]  == goImage) {
         [dataLogger setShouldPressProbe:YES];
         [dataLogger logGameSessionDataCorrect:NO];
         if (soundState) {
@@ -152,9 +160,7 @@ float distancE(x1,x2,y1,y2){
     }
     
     [backgroundButton setHidden:YES];
-    [ButtonToPress removeFromSuperview];
-    
-    
+    [buttonHolder setHidden:YES];
     
     //[homeButton setHidden:NO];
     [touchHomePromt setHidden:NO];
@@ -182,8 +188,8 @@ float distancE(x1,x2,y1,y2){
 -(IBAction)buttonPressed:(id)sender withEvent:(UIEvent *)event{
     [delayTimer invalidate];
     // Calculate Distance
-    float xCenterButton = ButtonToPress.frame.origin.x + ButtonToPress.frame.size.width/2.f;
-    float yCenterButton = ButtonToPress.frame.origin.y + ButtonToPress.frame.size.height/2.f;
+    float xCenterButton = buttonHolder.frame.origin.x + buttonHolder.frame.size.width/2.f;
+    float yCenterButton = buttonHolder.frame.origin.y + buttonHolder.frame.size.height/2.f;
     
     NSSet * touches = [event allTouches];
     UITouch *touch = [touches anyObject];
@@ -195,7 +201,7 @@ float distancE(x1,x2,y1,y2){
     
     
     
-    if ([ButtonToPress backgroundImageForState:UIControlStateNormal]  == goImage) {
+    if ([innerButton backgroundImageForState:UIControlStateNormal]  == goImage) {
         [dataLogger setShouldPressProbe:YES];
         [dataLogger setDistanceFromProbe:radius];
     }
@@ -222,7 +228,7 @@ float distancE(x1,x2,y1,y2){
     }
    
     [backgroundButton setHidden:YES];
-    [ButtonToPress removeFromSuperview];
+    [buttonHolder setHidden:YES];
     
     
     // Prompt for breaks
@@ -267,9 +273,18 @@ float distancE(x1,x2,y1,y2){
     centerY = 502;
     buttonWidth = [self.navigationController probeSize];
     buttonHeight = [self.navigationController probeSize];
+    activeButtonWidth = [self.navigationController activeSize];
+    activeButtonHeight = [self.navigationController activeSize];
+    
+    CGRect centeredFrame = CGRectMake( ((activeButtonWidth-buttonWidth)/2), ((activeButtonWidth-buttonWidth)/2), buttonWidth, buttonHeight);
+    [buttonHolder setFrame:CGRectMake(0, 0, activeButtonWidth, activeButtonHeight)];
+    [ButtonToPress setFrame:CGRectMake(0, 0, activeButtonWidth, activeButtonHeight)];
+    [innerButton setFrame:centeredFrame];
     
     goImage = [UIImage imageNamed:@"GoImage.png"];
     noGoImage = [UIImage imageNamed:@"NoGoImage.png"];
+    
+    [buttonHolder setHidden:YES];
     
     dataLogger = [[DATDataLogger alloc] init];
     level = [[DATLevelTracker alloc] init];

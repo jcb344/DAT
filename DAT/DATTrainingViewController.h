@@ -31,6 +31,9 @@
     IBOutlet UIButton *homeButton;
     IBOutlet UIButton *leftHomeButton;
     IBOutlet UIButton *ButtonToPress;
+    IBOutlet UIButton *innerButton;
+    IBOutlet UIView *buttonHolder;
+    
     IBOutlet UIButton *backgroundButton;
     IBOutlet UIButton *startStopButton;
     IBOutlet UIButton *backButton;
@@ -59,6 +62,8 @@
     int    centerY;
     int    buttonWidth;
     int    buttonHeight;
+    int    activeButtonWidth;
+    int    activeButtonHeight;
     
     int goalRT;
     
