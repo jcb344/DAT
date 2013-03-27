@@ -47,6 +47,7 @@
 @property (assign) BOOL rightState;
 @property (nonatomic,retain) NSMutableArray *logData;
 @property (nonatomic,retain) NSString *name;
+@property (nonatomic,retain) NSString *studyID;
 
 -(NSString*)dataFilePath;
 -(void)resumeState;
@@ -54,5 +55,7 @@
 
 -(void)setrTChange:(int)r;
 -(int)RTChange;
+
+-(void)clearLog;
 
 @end

@@ -10,13 +10,21 @@
 
 @implementation GAZZCloud
 
+@synthesize subjectID,studyID;
+
 -(void)postJSONOf:(NSArray*)array toAdress:(NSString*)adress{
-    [self postString:[self JSONForArray:array] toAdress:adress];
+    if (subjectID != Nil && studyID != Nil && [subjectID length] > 0 && [studyID length] > 0) {
+        [self postString:[self JSONForArray:array] toAdress:adress];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Please enter the subject ID and study ID" delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:nil ];
+        [alert show];
+    }
 }
 
 -(BOOL)postString:(NSString*)string toAdress:(NSString*)adress{
     BOOL sucsess = NO;
-    
+    NSLog(string);
     NSData *postData = [ [NSString stringWithFormat:@"%@",string]  dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest requestWithURL:[NSURL URLWithString:adress] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60] autorelease];
@@ -28,6 +36,7 @@
     [request setValue:@"MyApp-V1.0" forHTTPHeaderField:@"User-Agent"];
     [request setHTTPBody:postData];
     [theConnection release];
+    [receivedData release];
     theConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
     if (theConnection) {
@@ -43,8 +52,8 @@
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
-    [connection release];
-    [receivedData release];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection failed" message:[error localizedDescription] delegate:Nil cancelButtonTitle:@"Done" otherButtonTitles:nil ];
+    [alert show];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -57,6 +66,9 @@
             [connection cancel];  // stop connecting; no more delegate messages
             NSLog(@"Error statusCode %i", statusCode);
         }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"HTTP Response Code" message:[NSString stringWithFormat:@"%d",statusCode] delegate:Nil cancelButtonTitle:@"Done" otherButtonTitles:nil ];
+        [alert show];
+        NSLog(@"http status code %d",statusCode);
     }
 }
 
@@ -70,16 +82,14 @@
     
     NSString *response = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
     NSLog(response);
-    // release the connection, and the data object
-    //[connection release];
     [receivedData release];
 }
 
 
 -(NSString*)JSONForArray:(NSArray*)array{
     
-    NSString *outString = @"{\n\"data\": [";
-    for (int i = 0; i<[array count]-1; i++) {
+    NSString *outString = [NSString stringWithFormat:@"{\n\"studyID\":\"%@\"\n\"subjectID\":\"%@\"\n\"data\": [",studyID,subjectID];
+    for (int i = 0; i<[array count]; i++) {
         outString = [outString stringByAppendingString:@"\n\t{"];
         
         NSArray *keys = [[array objectAtIndex:i] allKeys];

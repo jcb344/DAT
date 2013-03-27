@@ -55,15 +55,15 @@
 -(void)startGameSessionwithName:(NSString*)name {
     if (currentGameData == Nil) {
         NSLog(@"NO previous Data file found. Creating New data set");
-        int date = [[NSDate date]timeIntervalSince1970];
+        //int date = [[NSDate date]timeIntervalSince1970];
         currentGameData = [[NSMutableArray alloc] init];
-        gameData = [[NSMutableDictionary alloc] initWithObjectsAndKeys:name,@"name",[NSNumber numberWithInt:date],@"date", nil];
+        //gameData = [[NSMutableDictionary alloc] initWithObjectsAndKeys:name,@"name",[NSNumber numberWithInt:date],@"date", nil];
         timming = NO;
     }
     else {
         NSLog(@"Data file found. Appending new data to file.");
-        gameData = [currentGameData lastObject];
-        [gameData retain];
+        //gameData = [currentGameData lastObject];
+        //[gameData retain];
         [currentGameData removeLastObject];
     }
 }
@@ -90,7 +90,6 @@
                    [NSNumber numberWithFloat:(1-currentInformationOfTheCue)],@"informationOfTheCue",
                    [NSNumber numberWithFloat:currentlocationOfTargetInDegrees],@"locationOfTargetInDegrees",
                    [NSNumber numberWithFloat:currentTargetOnScreenTime],@"targetOnScreenTime",
-                   [NSNumber numberWithFloat:currentTimeBetweenCueAndTarget],@"timeBetweenCueAndTarget",
                    [NSNumber numberWithInt:currentReactionTime],@"reactionTime",
                    [NSNumber numberWithInt:currentReleaseReactionTime],@"releaseReactionTime",
                    [NSNumber numberWithInt:currentReleaseReactionTimeGoal],@"currentReleaseReactionTimeGoal",
@@ -106,8 +105,8 @@
 }
 -(void)endGameSessionWithLevel:(int)l{
     NSLog(@"Game Session Ended");
-    [gameData setObject:[NSNumber numberWithInt:l] forKey:@"level"];
-    [currentGameData addObject:gameData];
+    //[gameData setObject:[NSNumber numberWithInt:l] forKey:@"level"];
+    //[currentGameData addObject:gameData];
 }
 
 -(void)startCalibrationSessionwithName:(NSString*)name {

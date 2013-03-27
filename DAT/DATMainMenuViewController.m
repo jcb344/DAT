@@ -82,8 +82,9 @@
 
     if (buttonIndex == 1)
     {
-        [[self.navigationController logData] release];
-        [self.navigationController setLogData:nil];
+        //[[self.navigationController logData] release];
+        //[self.navigationController setLogData:nil];
+        [self.navigationController clearLog];
         [dataView setText:@"No Data Logged"];
         [clearButton setEnabled:NO];
         //[checkThree setHidden:YES];
@@ -137,13 +138,6 @@
     [analyticView setHidden:YES];
 }
 
--(IBAction)printJSON:(id)sender{
-    GAZZCloud *JSON = [[GAZZCloud alloc] init];
-    [JSON postJSONOf:[self.navigationController logData] toAdress:@"http://localhost/~jacobbalthazor/ucsf/no.php"];//@"http://cerebrum.ucsf.edu/datapost"];
-    NSLog(@"done");
-    //NSLog(@"%@",[JSON JSONForArray:[self.navigationController logData]]);
-}
-
 -(IBAction)sendPressed:(id)sender{
     [setupView setHidden:YES];
     [analyticView setHidden:YES];
@@ -166,6 +160,12 @@
 }
 
 -(IBAction)sendData:(id)sender{
+    GAZZCloud *JSON = [[GAZZCloud alloc] init];
+    [JSON setStudyID:[studyField text]];
+    [JSON setSubjectID:[nameField text]];
+    [JSON postJSONOf:[self.navigationController logData] toAdress:@"http://cerebrum.ucsf.edu/datapost"];
+    
+    /* old mail way
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
@@ -181,7 +181,7 @@
     else {
         NSLog(@"Device is unable to send email in its current state.");
     }
-          
+     */
 }
 
 
@@ -202,6 +202,7 @@
     [self.navigationController setActiveSize:(int)[activeProbeSizeSlider value]];
     
     [self.navigationController setName:[nameField text]];
+    [self.navigationController setStudyID:[studyField text]];
     [self.navigationController setSoundState:[soundSwitch isOn]];
     [self.navigationController setRightState:[rightSwitch isOn]];
     [self.navigationController setDiscriminationState:[discriminationSwitch isOn]];
@@ -211,7 +212,7 @@
     //[checkOne setHidden:NO];
     [setupView setHidden:YES];
     [nameField resignFirstResponder];
-    
+    [studyField resignFirstResponder];
 }
 
 -(IBAction)setupPressed:(id)sender{
@@ -228,24 +229,21 @@
 }
 
 -(NSString*)generateDataText:(NSMutableArray*)data{
-    
-    NSDictionary *headerData = [data lastObject];
-    [nameField setText:[headerData objectForKey:@"name"]];
-    NSString *outData = [NSString stringWithFormat:@"%@\t%@",
+    NSString *outData = @"";/*[NSString stringWithFormat:@"%@\t%@",
         [headerData objectForKey:@"name"],
         [[NSDate dateWithTimeIntervalSince1970:[[headerData objectForKey:@"date"] intValue]] description] 
     ];
+    */
     
-    outData = [outData stringByAppendingString:@"\ntimeStamp\ttargetOnScreenTime\tangleOfXVPlus\tlocationOfTargetInDegrees\ttimeBetweenCueAndTarget\tinformationOfTheCue\treleaseTime\treactionTime\tSucsess\tshouldPressProbe\tdistanceFromProbe\tGoalRT"];
+    outData = [outData stringByAppendingString:@"\ntimeStamp\ttargetOnScreenTime\tangleOfXVPlus\tlocationOfTargetInDegrees\tinformationOfTheCue\treleaseTime\treactionTime\tSucsess\tshouldPressProbe\tdistanceFromProbe\tGoalRT"];
     
-    for (int i = 0; i<[data count]-1; i++) {
+    for (int i = 0; i<[data count]; i++) {
         
         outData = [outData stringByAppendingFormat:@"\n%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@",
                    [[[data objectAtIndex:i] objectForKey:@"timeStamp"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"targetOnScreenTime"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"angleOfXVPlus"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"locationOfTargetInDegrees"] stringValue],
-                   [[[data objectAtIndex:i] objectForKey:@"timeBetweenCueAndTarget"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"informationOfTheCue"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"releaseReactionTime"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"reactionTime"] stringValue],
@@ -267,7 +265,7 @@
     NSMutableArray *arraySorted = [[NSMutableArray alloc] init];
     
     BOOL startDateAquired = NO;
-    for (int i = 0; i<[data count]-1; i++) {
+    for (int i = 0; i<[data count]; i++) {
         
         if ([[[data objectAtIndex:i] objectForKey:@"shouldPressProbe"] intValue] == 1 && [[[data objectAtIndex:i] objectForKey:@"sucsess"] intValue] == 1) {
             if ([[[data objectAtIndex:i] objectForKey:@"currentReleaseReactionTimeGoal"] intValue] == 0 && [[[data objectAtIndex:i] objectForKey:@"informationOfTheCue"] floatValue] == .5) {
@@ -323,7 +321,7 @@
 
 -(NSMutableArray*)generateDataArrayRT:(NSMutableArray*)data{
     NSMutableArray *outArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i<[data count]-1; i++) {
+    for (int i = 0; i<[data count]; i++) {
         if ([[[data objectAtIndex:i] objectForKey:@"shouldPressProbe"] intValue] == 1 && [[[data objectAtIndex:i] objectForKey:@"sucsess"] intValue] == 1 && [[[data objectAtIndex:i] objectForKey:@"currentReleaseReactionTimeGoal"] intValue] != 0) {
             [outArray addObject:[[data objectAtIndex:i] objectForKey:@"releaseReactionTime"]];
         }
@@ -400,6 +398,9 @@
     [RTChangeLabel setText:[NSString stringWithFormat:@"%2.f",[RTChangeSlider value]]];
     if ([self.navigationController name] != nil) {
         [nameField setText:[self.navigationController name]];
+    }
+    if ([self.navigationController studyID] != nil) {
+        [studyField setText:[self.navigationController studyID]];
     }
     [self setupSaved:nil];
 }

@@ -13,6 +13,9 @@
     NSURLConnection *theConnection;
 }
 
+@property (nonatomic,retain) NSString *subjectID;
+@property (nonatomic,retain) NSString *studyID;
+
 -(NSString*)JSONForArray:(NSArray*)array;
 -(BOOL)postString:(NSString*)string toAdress:(NSString*)adress;
 

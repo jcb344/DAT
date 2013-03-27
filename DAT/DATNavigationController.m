@@ -25,6 +25,7 @@
 @synthesize rightState;
 @synthesize cueProbeTime;
 @synthesize cueProbeRandom;
+@synthesize studyID;
 
 -(void)setRTChange:(int)r{
     RTChange = r;
@@ -32,6 +33,11 @@
 -(int)rTChange{
     
     return RTChange;
+}
+
+-(void)clearLog{
+    [logData release];
+    logData = Nil;
 }
 
 -(NSString*)dataFilePath
@@ -68,11 +74,15 @@
         discriminationState = [[file objectForKey:@"discriminationState"] boolValue];
         rightState = [[file objectForKey:@"rightState"] boolValue];
         
-        //logData = [file objectForKey:@"logData"];
-        //[logData retain];
+        //
+        logData = [file objectForKey:@"logData"];
+        [logData retain];
+        //
         
         name = [file objectForKey:@"name"];
         [name retain];
+        studyID = [file objectForKey:@"studyID"];
+        [studyID retain];
         
         
         [file release];
@@ -114,10 +124,11 @@
     [file setObject:[NSNumber numberWithBool:rightState] forKey:@"rightState"];
     
     [file setObject:name forKey:@"name"];
+    [file setObject:studyID forKey:@"studyID"];
     
-    /*if (logData != nil) {
+    if (logData != nil) {
         [file setObject:logData forKey:@"logData"];
-    }*/
+    }
     
     [file writeToFile:[self dataFilePath] atomically:NO];
     [file release];

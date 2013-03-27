@@ -17,6 +17,7 @@
     //Setup
     IBOutlet UIView *setupView;
     IBOutlet UITextField *nameField;
+    IBOutlet UITextField *studyField;
     IBOutlet UISwitch *soundSwitch;
     IBOutlet UISwitch *discriminationSwitch;
     IBOutlet UISwitch *rightSwitch;
