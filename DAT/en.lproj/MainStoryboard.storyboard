@@ -342,7 +342,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.60000000000000009" contentMode="scaleToFill" id="81X-6K-7S7">
-                                        <rect key="frame" x="599" y="355" width="708" height="350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="708" height="440"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dwe-bs-dIj">
