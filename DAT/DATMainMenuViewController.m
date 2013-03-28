@@ -160,10 +160,12 @@
 }
 
 -(IBAction)sendData:(id)sender{
-    GAZZCloud *JSON = [[GAZZCloud alloc] init];
-    [JSON setStudyID:[studyField text]];
-    [JSON setSubjectID:[nameField text]];
-    [JSON postJSONOf:[self.navigationController logData] toAdress:@"http://cerebrum.ucsf.edu/datapost"];
+    if (cloud == Nil) {
+        cloud = [[GAZZCloud alloc] init];
+    }
+    [cloud setStudyID:[studyField text]];
+    [cloud setSubjectID:[nameField text]];
+    [cloud postJSONOf:[self.navigationController logData] toAdress:@"http://cerebrum.ucsf.edu/datapost"];
     
     /* old mail way
     if ([MFMailComposeViewController canSendMail]) {

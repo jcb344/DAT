@@ -71,6 +71,8 @@
     IBOutlet UILabel *endDateLabel;
     IBOutlet UILabel *graphMaxLabel;
     IBOutlet UILabel *graphMinLabel;
+    
+    GAZZCloud *cloud;
 }
 
 -(IBAction)analyticsPressed:(id)sender;
