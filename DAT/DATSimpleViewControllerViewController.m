@@ -65,7 +65,9 @@ float distancE(x1,x2,y1,y2){
 -(IBAction)homeReleased:(id)sender{
     homeBeingPressed = NO;
     if (homeShouldBeHeld) {
-        [delayTimer invalidate];
+        if (delayTimer != nil) {
+            [delayTimer invalidate];
+        }
         [touchHomePromt setHidden:NO];
         [level simpleReSeed];
         startTimerWhenHomePressed = YES;
@@ -186,7 +188,9 @@ float distancE(x1,x2,y1,y2){
 }
 
 -(IBAction)buttonPressed:(id)sender withEvent:(UIEvent *)event{
-    [delayTimer invalidate];
+    if (delayTimer != nil) {
+        [delayTimer invalidate];
+    }
     // Calculate Distance
     float xCenterButton = buttonHolder.frame.origin.x + buttonHolder.frame.size.width/2.f;
     float yCenterButton = buttonHolder.frame.origin.y + buttonHolder.frame.size.height/2.f;

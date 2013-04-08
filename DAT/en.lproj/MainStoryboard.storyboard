@@ -341,50 +341,6 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view alpha="0.60000000000000009" contentMode="scaleToFill" id="81X-6K-7S7">
-                                        <rect key="frame" x="0.0" y="0.0" width="708" height="440"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dwe-bs-dIj">
-                                                <rect key="frame" x="222" y="122" width="265" height="105"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="64"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qTT-ny-ykh">
-                                                <rect key="frame" x="614" y="144" width="87" height="61"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="unlockPressed:" destination="hFr-v8-jNK" eventType="touchUpInside" id="Ah6-mW-wGK"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="04u-bt-yG9">
-                                        <rect key="frame" x="308" y="377" width="87" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Close">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="setupSaved:" destination="hFr-v8-jNK" eventType="touchUpInside" id="Uvr-pc-HD2"/>
-                                        </connections>
-                                    </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="20" maxValue="180" id="70y-ah-fux">
                                         <rect key="frame" x="113" y="279" width="188" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -461,6 +417,50 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view alpha="0.60000000000000009" contentMode="scaleToFill" id="81X-6K-7S7">
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="440"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dwe-bs-dIj">
+                                                <rect key="frame" x="222" y="122" width="265" height="105"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="64"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qTT-ny-ykh">
+                                                <rect key="frame" x="614" y="144" width="87" height="61"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="unlockPressed:" destination="hFr-v8-jNK" eventType="touchUpInside" id="Ah6-mW-wGK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="04u-bt-yG9">
+                                        <rect key="frame" x="308" y="377" width="87" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setupSaved:" destination="hFr-v8-jNK" eventType="touchUpInside" id="Uvr-pc-HD2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
                             </view>
@@ -1244,165 +1244,6 @@
         <image name="gaugeImageflip.png" width="15" height="235"/>
         <image name="labLogo.png" width="200" height="81"/>
     </resources>
-    <classes>
-        <class className="DATCalibrationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATCalibrationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="buttonPressed:withEvent:"/>
-                <relationship kind="action" name="homeReleased:"/>
-                <relationship kind="action" name="homeTouched:"/>
-                <relationship kind="action" name="reSeed:"/>
-                <relationship kind="action" name="startCalibration:"/>
-                <relationship kind="outlet" name="TrialsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="homeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="touchHomePromt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DATMainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATMainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="analyticsDonePressed:"/>
-                <relationship kind="action" name="analyticsPressed:"/>
-                <relationship kind="action" name="clearDataPressed:"/>
-                <relationship kind="action" name="doneSendPressed:"/>
-                <relationship kind="action" name="printJSON:"/>
-                <relationship kind="action" name="sendData:"/>
-                <relationship kind="action" name="sendPressed:"/>
-                <relationship kind="action" name="setupPressed:"/>
-                <relationship kind="action" name="setupSaved:"/>
-                <relationship kind="action" name="stepperChanged:"/>
-                <relationship kind="action" name="unlockPressed:"/>
-                <relationship kind="outlet" name="RTChangeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="RTChangeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="activeProbeSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="activeSizeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="analyticView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="checkOne" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="checkThree" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="checkTwo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="clearButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="closeLockButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cueProbeRandomLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cueProbeRandomSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="cueProbeTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cueProbeTimeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="dataView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="discriminationSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="endDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="errorMarginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="errorMarginSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="goalReleaseTime" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="goalReleaseTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="graph" candidateClass="barGrapher"/>
-                <relationship kind="outlet" name="graphMaxLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="graphMinLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="graphRT" candidateClass="barGrapher"/>
-                <relationship kind="outlet" name="heatLengthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="heatlengthStepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="levelDownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="levelDownStepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="levelUpLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="levelUpStepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="lockScreen" candidateClass="UIView"/>
-                <relationship kind="outlet" name="medianLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="percentCorrectToProgLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentCorrectToProgSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="probeSizeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="probeSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="rightSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="sendView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="setupView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="soundSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="startDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="stepSizeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="stepSizeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="studyField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DATNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATNavigationController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="errorMarginLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="errorMarginSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="goalReleaseTime" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="goalReleaseTimeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentCorrectToProgLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="percentCorrectToProgSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="stepSizeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="stepSizeSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="DATSimpleViewControllerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATSimpleViewControllerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="buttonPressed:withEvent:"/>
-                <relationship kind="action" name="homeReleased:"/>
-                <relationship kind="action" name="homeTouched:"/>
-                <relationship kind="action" name="reSeed:"/>
-                <relationship kind="action" name="startTesting:"/>
-                <relationship kind="outlet" name="ButtonToPress" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="TrialsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="backgroundButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonHolder" candidateClass="UIView"/>
-                <relationship kind="outlet" name="homeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="innerButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="touchHomePromt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DATTrainingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATTrainingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="buttonPressed:withEvent:"/>
-                <relationship kind="action" name="homeReleased:"/>
-                <relationship kind="action" name="homeTouched:"/>
-                <relationship kind="action" name="reSeed:"/>
-                <relationship kind="action" name="startTesting:"/>
-                <relationship kind="outlet" name="ButtonToPress" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="RTGoalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TrialsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="backgroundButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonHolder" candidateClass="UIView"/>
-                <relationship kind="outlet" name="goalGauge" candidateClass="UIView"/>
-                <relationship kind="outlet" name="goalIndicator" candidateClass="UIView"/>
-                <relationship kind="outlet" name="homeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="innerButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="lastRectionTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftHomeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="touchHomePromt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DATViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="buttonPressed:withEvent:"/>
-                <relationship kind="action" name="homeReleased:"/>
-                <relationship kind="action" name="homeTouched:"/>
-                <relationship kind="action" name="reSeed:"/>
-                <relationship kind="action" name="startTesting:"/>
-                <relationship kind="outlet" name="ButtonToPress" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="TrialsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="backgroundButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="homeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="touchHomePromt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="barGrapher" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/barGrapher.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
