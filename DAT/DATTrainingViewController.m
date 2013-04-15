@@ -50,11 +50,6 @@ float distance(x1,x2,y1,y2){
         [startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [backButton setHidden:YES];
         [homeButton setHidden:NO];
-        if (timer  != nil) {
-            [timer invalidate];
-            timer = nil;
-        }
-        time  = 30*60;
         timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
         
     }
@@ -463,6 +458,14 @@ float distance(x1,x2,y1,y2){
     [leveL setNumberDownIfFalse:[self.navigationController levelDown]];
     [leveL setNumberUpIfCorrect:[self.navigationController levelUp]];
     [leveL setHeatSize:[self.navigationController heatlength]];
+    
+    time = (int)[self.navigationController trainingTime];
+    int min = time/60;
+    int sec = time%60;
+    if (sec > 10)
+        [timeLable setText:[NSString stringWithFormat:@"Remaining Time %d:%d",min,sec]];
+    else
+        [timeLable setText:[NSString stringWithFormat:@"Remaining Time %d:0%d",min,sec]];
     
     inSession = NO;
     homeBeingPressed = NO;

@@ -59,19 +59,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "DAT/DATTrainingViewController.m"
-         timestampString = "387741144.901906"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "386"
-         endingLineNumber = "386"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "DAT/DATMainMenuViewController.m"
          timestampString = "387758770.877205"
          startingColumnNumber = "9223372036854775807"
@@ -177,7 +164,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DAT/DATTrainingViewController.m"
-         timestampString = "387741144.901906"
+         timestampString = "387759651.652794"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "444"
@@ -190,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DAT/DATTrainingViewController.m"
-         timestampString = "387741144.901906"
+         timestampString = "387759651.652794"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "469"
-         endingLineNumber = "469"
+         startingLineNumber = "477"
+         endingLineNumber = "477"
          landmarkName = "-updateInicator"
          landmarkType = "5">
       </FileBreakpoint>
