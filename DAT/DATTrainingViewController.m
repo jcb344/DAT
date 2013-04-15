@@ -40,6 +40,7 @@ float distance(x1,x2,y1,y2){
         [startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [self saveData];
         [backButton setHidden:NO];
+        [timer invalidate];
     }
     else {
         [dataLogger startGameSessionwithName:[[self navigationController] name] ];
@@ -49,11 +50,29 @@ float distance(x1,x2,y1,y2){
         [startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [backButton setHidden:YES];
         [homeButton setHidden:NO];
+        if (timer  != nil) {
+            [timer invalidate];
+            timer = nil;
+        }
+        time  = 30*60;
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+        
     }
     
 }
 
-
+-(void)updateTimer{
+    time--;
+    int min = time/60;
+    int sec = time%60;
+    [timeLable setText:[NSString stringWithFormat:@"Remaining Time %d:%d",min,sec]];
+    if (time <= 0) {
+        [timer invalidate];
+        timer = nil;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Finished" message:@"Your training is now complete. Stop the training." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil ];
+        [alert show];
+    }
+}
 
 -(IBAction)homeTouched:(id)sender{
     if (sender == homeButton) {

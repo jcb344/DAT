@@ -69,6 +69,10 @@
     
     BOOL homePressed;
     BOOL LeftHomePressed;
+    
+    int time;
+    IBOutlet UILabel *timeLable;
+    NSTimer *timer;
 }
 
 -(void)displayButtonAtRandomLocation;
@@ -92,6 +96,8 @@
 -(void)setBackToGood;
 -(void)setBackToBad;
 -(void)setBack;
+
+-(void)updateTimer;
 
 
 @end
