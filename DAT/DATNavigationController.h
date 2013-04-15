@@ -40,6 +40,7 @@
 @property (assign) int cueProbeRandom;
 @property (assign) int probeSize;
 @property (assign) int activeSize;
+@property (assign) int trainingTime;
 
 @property (assign) BOOL testComplete;
 @property (assign) BOOL soundState;

@@ -26,6 +26,7 @@
 @synthesize cueProbeTime;
 @synthesize cueProbeRandom;
 @synthesize studyID;
+@synthesize trainingTime;
 
 -(void)setRTChange:(int)r{
     RTChange = r;
@@ -68,6 +69,7 @@
         cueProbeRandom = [[file objectForKey:@"cueProbeRandom"] intValue];
         probeSize = [[file objectForKey:@"probeSize"] intValue];
         activeSize = [[file objectForKey:@"activeSize"] intValue];
+        trainingTime = [[file objectForKey:@"trainingTime"] intValue];
         
         testComplete = [[file objectForKey:@"testComplete"] boolValue];
         soundState = [[file objectForKey:@"soundState"] boolValue];
@@ -117,6 +119,7 @@
     
     [file setObject:[NSNumber numberWithInt:probeSize] forKey:@"probeSize"];
     [file setObject:[NSNumber numberWithInt:activeSize] forKey:@"activeSize"];
+    [file setObject:[NSNumber numberWithInt:trainingTime] forKey:@"trainingTime"];
     
     [file setObject:[NSNumber numberWithBool:testComplete] forKey:@"testComplete"];
     [file setObject:[NSNumber numberWithBool:soundState] forKey:@"soundState"];

@@ -61,6 +61,8 @@
     IBOutlet UISlider *activeProbeSizeSlider;
     IBOutlet UILabel *probeSizeLabel;
     IBOutlet UILabel *activeSizeLabel;
+    IBOutlet UILabel *trainingTimeLabel;
+    IBOutlet UISlider *trainingTimeSlider;
     
     // Analytics
     IBOutlet UIView *analyticView;

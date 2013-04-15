@@ -65,11 +65,16 @@ float distance(x1,x2,y1,y2){
     time--;
     int min = time/60;
     int sec = time%60;
-    [timeLable setText:[NSString stringWithFormat:@"Remaining Time %d:%d",min,sec]];
+    if (sec > 10) {
+        [timeLable setText:[NSString stringWithFormat:@"Remaining Time %d:%d",min,sec]];
+    }
+    else
+        [timeLable setText:[NSString stringWithFormat:@"Remaining Time %d:0%d",min,sec]];
+    
     if (time <= 0) {
         [timer invalidate];
         timer = nil;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Finished" message:@"Your training is now complete. Stop the training." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil ];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Finished" message:@"Your training is now complete. Stop the training and remember to send the data." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil ];
         [alert show];
     }
 }

@@ -66,6 +66,15 @@
         }
         [cueProbeRandomLabel setText:[NSString stringWithFormat:@"%.1f",[cueProbeRandomSlider value]]];
     }
+    else if (sender == trainingTimeSlider){
+        int min = [trainingTimeSlider value]/60;
+        int sec = (int)[trainingTimeSlider value]%60;
+        if (sec > 10) {
+            [trainingTimeLabel setText:[NSString stringWithFormat:@"%d:%d",min,sec]];
+        }
+        else
+            [trainingTimeLabel setText:[NSString stringWithFormat:@"%d:0%d",min,sec]];
+    }
 }
 
 -(IBAction)doneSendPressed:(id)sender{
@@ -165,7 +174,7 @@
     }
     [cloud setStudyID:[studyField text]];
     [cloud setSubjectID:[nameField text]];
-    [cloud postJSONOf:[self.navigationController logData] toAdress:@"http://cerebrum.ucsf.edu/datapost"];
+    [cloud postJSONOf:[self.navigationController logData] toAdress:@"https://pulvinar.cin.ucsf.edu"]; //toAdress:@"http://cerebrum.ucsf.edu/datapost"];
     
     /* old mail way
     if ([MFMailComposeViewController canSendMail]) {
@@ -202,6 +211,7 @@
     [self.navigationController setHeatlength:(int)[heatlengthStepper value]];
     [self.navigationController setProbeSize:(int)[probeSizeSlider value]];
     [self.navigationController setActiveSize:(int)[activeProbeSizeSlider value]];
+    [self.navigationController setTrainingTime:(int)[trainingTimeSlider value]];
     
     [self.navigationController setName:[nameField text]];
     [self.navigationController setStudyID:[studyField text]];
@@ -360,6 +370,8 @@
         [probeSizeSlider setValue:(float)i];
         i = [self.navigationController activeSize];
         [activeProbeSizeSlider setValue:(float)i];
+        i = [self.navigationController trainingTime];
+        [trainingTimeSlider setValue:(float)i];
         
         i = [self.navigationController percentCorrectToProg];
         [percentCorrectToProgSlider setValue:(float)i/1000.f];
@@ -397,6 +409,7 @@
     [cueProbeRandomLabel setText:[NSString stringWithFormat:@"%.1f",[cueProbeRandomSlider value]]];
     [probeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[probeSizeSlider value]]];
     [activeSizeLabel setText:[NSString stringWithFormat:@"%2.f",[activeProbeSizeSlider value]]];
+    [self stepperChanged:trainingTimeSlider];
     [RTChangeLabel setText:[NSString stringWithFormat:@"%2.f",[RTChangeSlider value]]];
     if ([self.navigationController name] != nil) {
         [nameField setText:[self.navigationController name]];
