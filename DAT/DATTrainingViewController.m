@@ -249,6 +249,7 @@ float distance(x1,x2,y1,y2){
         [alert show];
         startTimerWhenHomePressed = YES;
     }
+    /*
     else if ([leveL simpleLevelNumber] == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Finished" message:@"Your test is now complete. Stop the test and remember to send the data." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil ];
         [alert show];
@@ -256,6 +257,7 @@ float distance(x1,x2,y1,y2){
         [self.navigationController setTestComplete:YES];
         startTimerWhenHomePressed = YES;
     }
+     */
     else {
         startTimerWhenHomePressed = YES;
         if (homeBeingPressed) {
@@ -361,12 +363,14 @@ float distance(x1,x2,y1,y2){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Break Time" message:@"Take a quick break." delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil ];
         [alert show];
     }
+    /*
     else if ([leveL simpleLevelNumber] == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Finished" message:@"Your test is now complete. Stop the test and remember to send the data." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil ];
         [alert show];
         [homeButton setHidden:YES];
         [self.navigationController setTestComplete:YES];
     }
+     */
     startTimerWhenHomePressed = YES;
 }
 
