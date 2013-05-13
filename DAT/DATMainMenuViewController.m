@@ -174,7 +174,7 @@
     }
     [cloud setStudyID:[studyField text]];
     [cloud setSubjectID:[nameField text]];
-    [cloud postJSONOf:[self.navigationController logData] toAdress:@"https://pulvinar.cin.ucsf.edu"]; //toAdress:@"http://cerebrum.ucsf.edu/datapost"];
+    [cloud postJSONOf:[self.navigationController logData] toAdress:@"https://pulvinar.cin.ucsf.edu/neuropost/datapost"]; //toAdress:@"http://cerebrum.ucsf.edu/datapost"];
     
     /* old mail way
     if ([MFMailComposeViewController canSendMail]) {
