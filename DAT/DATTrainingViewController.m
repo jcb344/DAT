@@ -27,7 +27,9 @@ float distance(x1,x2,y1,y2){
 }
 
 -(void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex{
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([alertView.message isEqualToString:@"Remember to send the data."]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 -(IBAction)startTesting:(id)sender{
