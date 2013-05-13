@@ -33,7 +33,7 @@
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"MyApp-V1.0" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"DAT" forHTTPHeaderField:@"User-Agent"];
     [request setHTTPBody:postData];
     //[theConnection release];
     //[receivedData release];
