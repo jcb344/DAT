@@ -12,9 +12,23 @@
 
 @synthesize subjectID,studyID;
 
+-(void)setDeligate:(id)d{
+    deligate = d;
+}
+
 -(void)postJSONOf:(NSArray*)array toAdress:(NSString*)adress{
     if (subjectID != Nil && studyID != Nil && [subjectID length] > 0 && [studyID length] > 0) {
-        [self postString:[self JSONForArray:array] toAdress:adress];
+        [self postString:[self JSONForArray2:array] toAdress:adress];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Please enter the subject ID and study ID" delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:nil ];
+        [alert show];
+    }
+}
+
+-(void)postJSONString:(NSString*)array toAdress:(NSString*)adress{
+    if (subjectID != Nil && studyID != Nil && [subjectID length] > 0 && [studyID length] > 0) {
+        [self postString:array toAdress:adress];
     }
     else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Please enter the subject ID and study ID" delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:nil ];
@@ -67,8 +81,9 @@
             NSLog(@"Error statusCode %i", statusCode);
         }
         else if (statusCode == 200){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data Sent" message:@"Data has been successfully uplaoded" delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:nil ];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data Sent" message:@"Data has been successfully uplaoded" delegate:deligate cancelButtonTitle:@"OK" otherButtonTitles:nil ];
             [alert show];
+            NSLog(@"sucsess");
         }
         else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"HTTP Response Code" message:[NSString stringWithFormat:@"%d",statusCode] delegate:Nil cancelButtonTitle:@"Done" otherButtonTitles:nil ];
@@ -100,15 +115,16 @@
         outString = [outString stringByAppendingString:@"\n\t{"];
         
         NSArray *keys = [[array objectAtIndex:i] allKeys];
-        
-        for (int j = 0; j<[keys count]; j++) {
-            if (j != ([keys count]-1) ) {
-                outString = [outString stringByAppendingFormat:@" \"%@\":%f,",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+        //@autoreleasepool {
+            for (int j = 0; j<[keys count]; j++) {
+                if (j != ([keys count]-1) ) {
+                    outString = [outString stringByAppendingFormat:@" \"%@\":%f,",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                }
+                else{
+                    outString = [outString stringByAppendingFormat:@" \"%@\":%f",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                }
             }
-            else{
-                outString = [outString stringByAppendingFormat:@" \"%@\":%f",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
-            }
-        }
+        //}
         if (i != ([array count]-1) ) {
             outString = [outString stringByAppendingString:@"},"];
         }
@@ -117,7 +133,98 @@
         }
     }
     outString = [outString stringByAppendingString:@"\n]\n}"];
+    NSLog(@"size %d",[outString length]);
     return outString;
+}
+
+-(NSString*)JSONForArray2:(NSArray*)array{
+    NSString *tempString;
+    NSString *out;
+    char *outString;
+    int l;
+    int pointStart = 0;
+    outString = (char *) malloc(4000000*sizeof(char));
+    tempString = [[NSString alloc] initWithFormat:@"{\n\"studyID\":\"%@\",\n\"subjectID\":\"%@\",\n\"data\": [",studyID,subjectID];
+    //outString = [[NSString alloc] initWithString:tempString];
+    l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+    strcpy (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+    pointStart += l;
+    [tempString release];
+    
+    for (int i = 0; i<[array count]; i++) {
+        tempString = [[NSString alloc] initWithFormat:@"%@",@"\n\t{"];
+        //[outString release];
+        //outString = [[NSString alloc] initWithString:tempString];
+        l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+        strcatfast (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding],pointStart,l);
+        pointStart += l;
+        [tempString release];
+        
+        NSArray *keys = [[array objectAtIndex:i] allKeys];
+        
+        for (int j = 0; j<[keys count]; j++) {
+            if (j != ([keys count]-1) ) {
+                tempString = [[NSString alloc] initWithFormat:@" \"%@\":%f," ,[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                //[outString release];
+                //outString = [[NSString alloc] initWithString:tempString];
+                l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+                strcatfast (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding],pointStart,l);
+                pointStart += l;
+                [tempString release];
+            }
+            else{
+                tempString = [[NSString alloc] initWithFormat:@" \"%@\":%f" ,[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                //[outString release];
+                //outString = [[NSString alloc] initWithString:tempString];
+                l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+                strcatfast (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding],pointStart,l);
+                pointStart += l;
+                [tempString release];
+            }
+        }
+        
+        if (i != ([array count]-1) ) {
+            tempString = [[NSString alloc] initWithFormat:@"%@",@"},"];
+            //[outString release];
+            //outString = [[NSString alloc] initWithString:tempString];
+            l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+            strcatfast (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding],pointStart,l);
+            pointStart += l;
+            [tempString release];
+        }
+        else{
+            tempString = [[NSString alloc] initWithFormat:@"%@",@"}"];
+            //[outString release];
+            //outString = [[NSString alloc] initWithString:tempString];
+            l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+            strcatfast (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding],pointStart,l);
+            pointStart += l;
+            [tempString release];
+            
+        }
+        if (i%100 == 0) {
+            NSLog(@"%d of %d  %.2f",i,[array count],(float)i/(float)[array count]);
+        }
+    }
+    tempString = [[NSString alloc] initWithFormat:@"%@",@"\n]\n}"];
+    //[outString release];
+    //outString = [[NSString alloc] initWithString:tempString];
+    l = strlen([tempString cStringUsingEncoding:NSUTF8StringEncoding]);
+    strcatfast (outString,[tempString cStringUsingEncoding:NSUTF8StringEncoding],pointStart,l);
+    pointStart += l;
+    [tempString release];
+    
+    out = [NSString stringWithUTF8String:outString];
+    NSLog(@"size %d",[out length]);
+    return out;
+}
+
+char* strcatfast( char* dest, char* src, int start,int length )
+{
+    for (int i = start; i<start+length; i++) {
+        dest[i] = src[i-start];
+    }
+    return dest;
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {

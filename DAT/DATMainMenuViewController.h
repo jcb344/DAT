@@ -28,6 +28,7 @@
     IBOutlet UIView *sendView;
     IBOutlet UITextView *dataView;
     IBOutlet UIButton *clearButton;
+    IBOutlet UIButton *sendButton;
     
     //Check Marks
     IBOutlet UIImageView *checkOne;
@@ -75,6 +76,7 @@
     IBOutlet UILabel *graphMinLabel;
     
     GAZZCloud *cloud;
+    NSString *jsonString;
 }
 
 -(IBAction)analyticsPressed:(id)sender;
@@ -99,5 +101,7 @@
 // Training perameter actions
 
 -(IBAction)stepperChanged:(id)sender;
+
+-(IBAction)generateJson:(id)sender;
 
 @end

@@ -100,6 +100,9 @@
         //[checkTwo setHidden:YES];
         //[checkOne setHidden:YES];
     }
+    [sendButton setEnabled:YES];
+    [sendButton setAlpha:1];
+    [sendButton setTitle:@"Send" forState:UIControlStateNormal];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
@@ -169,13 +172,19 @@
 }
 
 -(IBAction)sendData:(id)sender{
+    [sendButton setEnabled:NO];
+    [sendButton setAlpha:.5];
+    [sendButton setTitle:@"Sending..." forState:UIControlStateNormal];
+    
     if (cloud == Nil) {
         cloud = [[GAZZCloud alloc] init];
+        [cloud setDeligate:self];
     }
     [cloud setStudyID:[studyField text]];
     [cloud setSubjectID:[nameField text]];
     [cloud postJSONOf:[self.navigationController logData] toAdress:@"https://pulvinar.cin.ucsf.edu/neuropost/datapost"]; //toAdress:@"http://cerebrum.ucsf.edu/datapost"];
     
+
     /* old mail way
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
@@ -195,6 +204,14 @@
      */
 }
 
+-(IBAction)generateJson:(id)sender{
+    if (cloud == Nil) {
+        cloud = [[GAZZCloud alloc] init];
+        [cloud setDeligate:self];
+    }
+    jsonString = [cloud JSONForArray2:[self.navigationController logData]];
+    [jsonString retain];
+}
 
 -(IBAction)setupSaved:(id)sender{
     
@@ -249,9 +266,18 @@
     
     outData = [outData stringByAppendingString:@"\ntimeStamp\ttargetOnScreenTime\tangleOfXVPlus\tlocationOfTargetInDegrees\tinformationOfTheCue\treleaseTime\treactionTime\tSucsess\tshouldPressProbe\tdistanceFromProbe\tGoalRT"];
     
-    for (int i = 0; i<[data count]; i++) {
+    int start;
+    int end = [data count];
+    if ([data count] > 100) {
+        outData = [outData stringByAppendingString:@"\n\n-----Last 100 entries-----\n"];
+        start = end - 101;
+    }
+    else
+        start = 0;
+    
+    for (int i = start; i<end; i++) {
         
-        outData = [outData stringByAppendingFormat:@"\n%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@",
+        outData = [outData stringByAppendingFormat:@"\n%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@\t%@",
                    [[[data objectAtIndex:i] objectForKey:@"timeStamp"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"targetOnScreenTime"] stringValue],
                    [[[data objectAtIndex:i] objectForKey:@"angleOfXVPlus"] stringValue],
